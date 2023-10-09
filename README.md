@@ -128,17 +128,19 @@ FROM node
 
 WORKDIR /usr/src/app
 
-COPY public/ .
+COPY my-app/public .
 
-COPY src/ .
+COPY my-app/src .
 
-COPY package.json .
+COPY my-app/package.json .
 
 RUN npm install
 
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
+
 ```
 
 ### 2.5 Build Dockerfile
@@ -146,5 +148,3 @@ CMD ["npm", "start"]
 ```Terminal
 docker build -t node_react_hlb .
 ```
-
-###### Deu erro de permissão negada por recarregar o VSCODE, utilizando passo 1 deve resolver.

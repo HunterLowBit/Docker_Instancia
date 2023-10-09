@@ -2,11 +2,11 @@ FROM node
 
 WORKDIR /usr/src/app
 
-COPY public/ .
+COPY my-app/public .
 
-COPY src/ .
+COPY my-app/src .
 
-COPY package.json .
+COPY my-app/package.json .
 
 RUN npm install
 
