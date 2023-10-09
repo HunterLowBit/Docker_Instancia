@@ -26,7 +26,7 @@ sudo usermod -aG docker $USER
 
 ```
 apt update
-apt install vim -y && apt install upgrade -y
+apt install vim -y && apt upgrade -y
 ls
 ```
 
@@ -38,22 +38,4 @@ Sair do docker Ubuntu
 
 ```
 exit
-```
-
-### 1.1 Comandos de teste no ubuntu(docker)
-
-```
-$ apt update
-$ apt install vim -y && apt install upgrade -y
-$ ls
-```
-
-Resultado do comando ls
-
-`bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var boot  etc  lib   lib64  media   opt  root  sbin  sys  usr`
-
-Sair do docker Ubuntu
-
-```
-$ exit
 ```
