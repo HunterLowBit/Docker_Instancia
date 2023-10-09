@@ -110,3 +110,12 @@ docker rm "nome ou id do conteiner"
 ```node
 npm init -y
 ```
+
+
+### 2.3 Projeto React
+
+```node
+npx create-react-app my-app
+cd my-app
+npm start
+```
