@@ -8,7 +8,7 @@
 
 # Passo-a-Passo do Que Foi Executado
 
-## **1 - terminal**
+## **1 terminal**
 
 ```
 docker run -it ubuntu
@@ -39,3 +39,23 @@ Sair do docker Ubuntu
 ```
 exit
 ```
+
+### 1.2 Comando listar conteiners
+
+Rodando (EXEMPLO)
+
+```
+docker ps
+```
+
+`CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES`
+
+Já executado
+
+```
+docker ps -a
+```
+
+`CONTAINER ID  IMAGE     COMMAND         CREATED               STATUS              `
+
+`e2837da72630  ubuntu   "/bin/bash"     33 minutes ago   Exited (0) 15 minutes ago `
