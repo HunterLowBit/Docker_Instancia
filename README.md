@@ -100,3 +100,7 @@ docker run -p 80:80 --name ubuntu_Exemplo ubuntu
 ```
 docker rm "nome ou id do conteiner"
 ```
+
+## 2 Criando Dockerfile
+
+### 2.1 criado arquivo "dockerfile" sem extensão pelo VSCODE
