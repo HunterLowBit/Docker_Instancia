@@ -111,7 +111,6 @@ docker rm "nome ou id do conteiner"
 npm init -y
 ```
 
-
 ### 2.3 Projeto React
 
 ```node
@@ -119,3 +118,33 @@ npx create-react-app my-app
 cd my-app
 npm start
 ```
+
+`http://localhost:3000`
+
+### 2.4 Comandos para dockerfile
+
+```dockerfile
+FROM node
+
+WORKDIR /usr/src/app
+
+COPY public/ .
+
+COPY src/ .
+
+COPY package.json .
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+```
+
+### 2.5 Build Dockerfile
+
+```Terminal
+docker build -t node_react_hlb .
+```
+
+###### Deu erro de permissão negada por recarregar o VSCODE, utilizando passo 1 deve resolver.
