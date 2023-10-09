@@ -10,13 +10,13 @@
 
 ## **1 terminal**
 
-```
+```terminal
 docker run -it ubuntu
 ```
 
 ###### Em caso de erro:
 
-```
+```terminal
 sudo groupadd docker
 newgrp docker
 sudo usermod -aG docker $USER
@@ -24,7 +24,7 @@ sudo usermod -aG docker $USER
 
 ### 1.1 Comandos de teste no ubuntu(docker)
 
-```
+```terminal_conteiner
 apt update
 apt install vim -y && apt upgrade -y
 ls
@@ -36,7 +36,7 @@ Resultado do comando ls
 
 Sair do docker Ubuntu
 
-```
+```Terminal_Conteiner
 exit
 ```
 
@@ -44,7 +44,7 @@ exit
 
 Rodando (EXEMPLO)
 
-```
+```terminal
 docker ps
 ```
 
@@ -52,7 +52,7 @@ docker ps
 
 Já executado
 
-```
+```terminal
 docker ps -a
 ```
 
@@ -64,11 +64,11 @@ docker ps -a
 
 Necessário o ID do conteiner baixado (EX: `CONTAINER ID: e2837da72630`)
 
-```
+```terminal
 docker start "CONTAINER ID"
 ```
 
-```
+```terminal
 docker stop "CONTAINER ID"
 ```
 
@@ -76,7 +76,7 @@ docker stop "CONTAINER ID"
 
 `docker run -it --name "nome Para Conteiner" "nome do Conteirner A Ser Baixado"`
 
-```
+```terminal
 docker run -it --name ubuntu_Exemplo ubuntu
 ```
 
@@ -84,7 +84,7 @@ docker run -it --name ubuntu_Exemplo ubuntu
 
 ### 1.5 Expondo portas
 
-```
+```terminal
 docker run -p 80:80 --name ubuntu_Exemplo ubuntu
 ```
 
@@ -97,10 +97,16 @@ docker run -p 80:80 --name ubuntu_Exemplo ubuntu
 
 ### 1.7 Comando "RM" para remocção de Conteiner
 
-```
+```terminal
 docker rm "nome ou id do conteiner"
 ```
 
 ## 2 Criando Dockerfile
 
 ### 2.1 criado arquivo "dockerfile" sem extensão pelo VSCODE
+
+### 2.2 Projeto node
+
+```node
+npm init -y
+```

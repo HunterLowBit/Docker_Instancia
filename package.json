@@ -1,0 +1,12 @@
+{
+  "name": "docker_instancia",
+  "version": "1.0.0",
+  "description": "* [ ] criar um conteiner * [ ] executar e salvar os comandos * [ ] salvar um print do projeto rodando * [ ] savar um print do codigo com CODESNAP * [ ] postar tudo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
