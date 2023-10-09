@@ -59,3 +59,44 @@ docker ps -a
 `CONTAINER ID  IMAGE     COMMAND         CREATED               STATUS              `
 
 `e2837da72630  ubuntu   "/bin/bash"     33 minutes ago   Exited (0) 15 minutes ago `
+
+### 1.3 Iniciar e Parar Conteiners
+
+Necessário o ID do conteiner baixado (EX: `CONTAINER ID: e2837da72630`)
+
+```
+docker start "CONTAINER ID"
+```
+
+```
+docker stop "CONTAINER ID"
+```
+
+### 1.4 Nomes para Conteiners
+
+`docker run -it --name "nome Para Conteiner" "nome do Conteirner A Ser Baixado"`
+
+```
+docker run -it --name ubuntu_Exemplo ubuntu
+```
+
+`docker start ubuntu_exemplo`
+
+### 1.5 Expondo portas
+
+```
+docker run -p 80:80 --name ubuntu_Exemplo ubuntu
+```
+
+80: Porta da Maquina
+:80 Porta da Aplicação
+
+### 1.6 Docker Logs para ver historico de ações do conteiner
+
+`docker logs "Id ou Nome do conteiner"`
+
+### 1.7 Comando "RM" para remocção de Conteiner
+
+```
+docker rm "nome ou id do conteiner"
+```
