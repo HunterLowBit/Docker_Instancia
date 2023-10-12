@@ -7,7 +7,7 @@ services:
       - "3000:3000"
     container_name: docker_react
     volumes:
-      - /docker_react:docker_react
+      - /docker_react:/docker_react
       - node_modules:/docker_react/node_modules
 volumes:
   node_modules:

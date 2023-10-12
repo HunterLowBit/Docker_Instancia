@@ -10,7 +10,10 @@
 
 ## **1 terminal**
 
-```terminal
+* Não testei no windows
+* No Linux roda com `sudo` para ter acesso ao root
+
+```
 docker run -it ubuntu
 ```
 
@@ -24,7 +27,7 @@ sudo usermod -aG docker $USER
 
 ### 1.1 Comandos de teste no ubuntu(docker)
 
-```terminal_conteiner
+```
 apt update
 apt install vim -y && apt upgrade -y
 ls
@@ -36,7 +39,7 @@ Resultado do comando ls
 
 Sair do docker Ubuntu
 
-```Terminal_Conteiner
+```
 exit
 ```
 
@@ -44,7 +47,7 @@ exit
 
 Rodando (EXEMPLO)
 
-```terminal
+```
 docker ps
 ```
 
@@ -52,7 +55,7 @@ docker ps
 
 Já executado
 
-```terminal
+```
 docker ps -a
 ```
 
@@ -64,11 +67,11 @@ docker ps -a
 
 Necessário o ID do conteiner baixado (EX: `CONTAINER ID: e2837da72630`)
 
-```terminal
+```
 docker start "CONTAINER ID"
 ```
 
-```terminal
+```
 docker stop "CONTAINER ID"
 ```
 
@@ -84,7 +87,7 @@ docker run -it --name ubuntu_Exemplo ubuntu
 
 ### 1.5 Expondo portas
 
-```terminal
+```
 docker run -p 80:80 --name ubuntu_Exemplo ubuntu
 ```
 
@@ -97,7 +100,7 @@ docker run -p 80:80 --name ubuntu_Exemplo ubuntu
 
 ### 1.7 Comando "RM" para remocção de Conteiner
 
-```terminal
+```
 docker rm "nome ou id do conteiner"
 ```
 
@@ -107,13 +110,13 @@ docker rm "nome ou id do conteiner"
 
 ### 2.2 Projeto node
 
-```node
+```
 npm init -y
 ```
 
 ### 2.3 Projeto React
 
-```node
+```
 npx create-react-app my-app
 cd my-app
 npm start
@@ -123,7 +126,7 @@ npm start
 
 ### 2.4 Comandos para dockerfile
 
-```dockerfile
+```
 FROM node
 
 WORKDIR /usr/src/app
@@ -145,7 +148,7 @@ CMD ["npm", "start"]
 
 ### 2.5 Build Dockerfile
 
-```Terminal
+```
 docker build -t node_react_hlb .
 ```
 
@@ -177,9 +180,13 @@ CMD ["npm", "start"]
 
 `https://youtu.be/6p7lylJEjrU?t=456`
 
-Criamos o arquivo `docker-compose.yaml` estruturando da seguinte maneira:
+### 3.1 Criamos o arquivo docker compose
 
-```compose.yaml
+`docker-compose.yaml`
+
+Estruturado da seguinte maneira:
+
+```
 version: 1.0.0
 services:
   docker_react:
@@ -188,4 +195,44 @@ services:
     ports:
       - "3000:3000"
     container_name: docker_react
+    volumes:
+      - /docker_react:/docker_react
+      - node_modules:/docker_react/node_modules
+volumes:
+  node_modules:
+
+```
+
+### 3.2 Criando o arquivo deploy
+
+Criamos a pasta `bin` na raiz do projeto, contendo o arquivo `deploy.sh`
+
+No terminal usaremos os comandos:
+
+```
+cd bin
+```
+
+`Docker_Instancia$ cd bin 
+Docker_Instancia/bin$  `
+
+```
+chmod u+x deploy.sh
+```
+
+Em seguido editamos o deploy.sh
+
+```
+#!/bin/bash
+cd ..
+fileEnv="docker-compose.yaml"
+echo "Deploying docker-compose.yaml"
+docker-compose -f docker-compose.yaml -f $fileEnv up --build --no-deps -d
+
+```
+
+o comando final foi
+
+```
+./deploy.sh
 ```
