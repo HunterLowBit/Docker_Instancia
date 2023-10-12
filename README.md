@@ -148,3 +148,27 @@ CMD ["npm", "start"]
 ```Terminal
 docker build -t node_react_hlb .
 ```
+
+### 2.6 Corrigindo Erros
+
+Video de referencia: `https://www.youtube.com/watch?v=6p7lylJEjrU`
+
+1. Criei um outro projeto React chamado "docker_react" usando primeiro comando do topico 2.3 - `npx create-react-app docker_react`
+2. Copiei o dockerfile para a pasta criada "docker_react"
+3. Alterei o dockerfile para refletir o projeto corrigido
+
+   ```dockerfile
+   FROM node
+
+   WORKDIR /docker_react
+
+   COPY package.json  .
+
+   RUN npm install
+
+   COPY . .
+
+   EXPOSE 3000
+
+   CMD ["npm", "start"]
+   ```
