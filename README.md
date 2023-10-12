@@ -245,3 +245,15 @@ o comando final foi
 Docker esta rodando e sendo editado e compilado em tempo real com um projeto generico, logo deu certo com algumas alterações.
 
 Prints de Telas e de Codigos estão disponiveis no repositórios.
+
+`<img src="/prints_de_Tela/Edição em tempo real do codigo de 2023-10-12 17-19-08.png">`
+
+`<img src="/prints_de_Tela/Pagina levemente alterada de 2023-10-12 17-15-31.png">`
+
+`<img src="/prints_de_Tela/React compilando em tempo real de 2023-10-12 17-22-44.png">`
+
+`<img src="/prints_de_Tela/React Modificando em tempo real no docker de 2023-10-12 17-10-49.png">`
+
+`<img src="/prints_de_Tela/terminal comilando e rodando react de 2023-10-12 17-21-28.png">`
+
+`<img src="/prints_de_Tela/Vscode em tela completa com cada elemento de 2023-10-12 17-13-12.png">`
