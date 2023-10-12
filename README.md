@@ -153,22 +153,39 @@ docker build -t node_react_hlb .
 
 Video de referencia: `https://www.youtube.com/watch?v=6p7lylJEjrU`
 
-1. Criei um outro projeto React chamado "docker_react" usando primeiro comando do topico 2.3 - `npx create-react-app docker_react`
-2. Copiei o dockerfile para a pasta criada "docker_react"
-3. Alterei o dockerfile para refletir o projeto corrigido
+* Criei um outro projeto React chamado "docker_react" usando primeiro comando do topico 2.3 - `npx create-react-app docker_react`
+* Copiei o dockerfile para a pasta criada "docker_react"
+* Alterei o dockerfile para refletir o projeto corrigido
 
-   ```dockerfile
-   FROM node
+```
+FROM node
 
-   WORKDIR /docker_react
+WORKDIR /docker_react
 
-   COPY package.json  .
+COPY package.json  .
 
-   RUN npm install
+RUN npm install
 
-   COPY . .
+COPY . .
 
-   EXPOSE 3000
+EXPOSE 3000
 
-   CMD ["npm", "start"]
-   ```
+CMD ["npm", "start"]
+```
+
+## 3 Criando docker-compose
+
+`https://youtu.be/6p7lylJEjrU?t=456`
+
+Criamos o arquivo `docker-compose.yaml` estruturando da seguinte maneira:
+
+```compose.yaml
+version: 1.0.0
+services:
+  docker_react:
+    build: 
+      context: ./docker_react
+    ports:
+      - "3000:3000"
+    container_name: docker_react
+```
