@@ -129,19 +129,21 @@ npm start
 ```
 FROM node
 
-WORKDIR /usr/src/app
+WORKDIR /docker_react
 
-COPY my-app/public .
+COPY package.json  .
 
-COPY my-app/src .
-
-COPY my-app/package.json .
+COPY /package.json  /docker_react/
 
 RUN npm install
+
+COPY ./ ./
 
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
+
 
 
 ```
@@ -191,15 +193,17 @@ version: 1.0.0
 services:
   docker_react:
     build: 
-      context: ./docker_react
+      context: ./docker_react/
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     container_name: docker_react
     volumes:
-      - /docker_react:/docker_react
+      - ./docker_react:/docker_react
       - node_modules:/docker_react/node_modules
 volumes:
   node_modules:
+
 
 ```
 
@@ -213,8 +217,7 @@ No terminal usaremos os comandos:
 cd bin
 ```
 
-`Docker_Instancia$ cd bin 
-Docker_Instancia/bin$  `
+`Docker_Instancia$ cd bin  Docker_Instancia/bin$  `
 
 ```
 chmod u+x deploy.sh
@@ -227,7 +230,7 @@ Em seguido editamos o deploy.sh
 cd ..
 fileEnv="docker-compose.yaml"
 echo "Deploying docker-compose.yaml"
-docker-compose -f docker-compose.yaml -f $fileEnv up --build --no-deps -d
+docker-compose -f docker-compose.yaml -f $fileEnv up --build
 
 ```
 
