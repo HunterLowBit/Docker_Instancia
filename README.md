@@ -2,9 +2,9 @@
 
 * [X] criar um conteiner
 * [X] executar e salvar os comandos
-* [ ] salvar um print do projeto rodando
-* [ ] savar um print do codigo com CODESNAP
-* [ ] postar tudo
+* [X] salvar um print do projeto rodando
+* [X] savar um print do codigo com CODESNAP
+* [X] postar tudo
 
 # Passo-a-Passo do Que Foi Executado
 
@@ -239,3 +239,9 @@ o comando final foi
 ```
 ./deploy.sh
 ```
+
+## 4 RESULTADOS
+
+Docker esta rodando e sendo editado e compilado em tempo real com um projeto generico, logo deu certo com algumas alterações.
+
+Prints de Telas e de Codigos estão disponiveis no repositórios.
